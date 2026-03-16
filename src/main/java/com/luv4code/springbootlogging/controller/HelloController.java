@@ -11,8 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/hello")
-    public String sayHello(){
+    public String sayHello() {
         log.info("Received request for /hello");
+
+        log.trace("TRACE: HelloController LOG");
+        log.debug("DEBUG: HelloController LOG");
+        log.info("INFO: HelloController LOG");
+        log.warn("WARN: HelloController LOG");
+        log.error("ERROR: HelloController LOG");
+        int i = 10 / 0;
         return "Hello SpringBoot!!!";
     }
 }
