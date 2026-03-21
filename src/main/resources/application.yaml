@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: demo-app
+            client-secret: RpAJExRy2Gz6UPCS8gAX1Eiv9zWmEQ4X
+            scope:
+              - openid
+              - profile
+              - email
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/keycloak
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8443/realms/demo_realm
+            user-name-attribute: preferred_username
+

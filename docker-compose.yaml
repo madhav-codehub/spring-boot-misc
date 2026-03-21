@@ -12,5 +12,5 @@ services:
       - KC_HOSTNAME_STRICT=false
       - KC_HOSTNAME_STRICT_HTTPS=false
     ports:
-      - "8080:8080"
+      - "8443:8080"
     restart: unless-stopped
