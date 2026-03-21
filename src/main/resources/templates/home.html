@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+<div class="px-4 py-8 max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">Get All Students Information</h1>
+
+    <div class="overflow-x-auto shadow-md rounded-lg border border-gray-200">
+        <table class="min-w-full divide-y divide-gray-200 bg-white">
+            <thead class="bg-gray-100">
+            <tr>
+                <th class="px-6 py-3.5 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                    Student Id
+                </th>
+                <th class="px-6 py-3.5 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                    Student First Name
+                </th>
+                <th class="px-6 py-3.5 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                    Student Last Name
+                </th>
+                <th class="px-6 py-3.5 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                    Student Email
+                </th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+            <tr th:each="student : ${studentList}" class="hover:bg-gray-50 transition-colors duration-150">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><span th:text="${student.id}"></span></td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><span
+                        th:text="${student.firstName}"></span></td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><span
+                        th:text="${student.lastName}"></span></td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600"><span th:text="${student.email}"></span>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(studentList)}">
+                <td colspan="4" class="px-6 py-10 text-center text-gray-500 text-sm">
+                    No students found
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

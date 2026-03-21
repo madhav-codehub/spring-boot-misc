@@ -7,6 +7,7 @@ import com.luv4code.springbootlogging.entity.Student;
 public class StudentMapper {
     public static StudentResponseDTO toDTO(Student student) {
         return StudentResponseDTO.builder()
+                .id(student.getId())
                 .firstName(student.getFirstName())
                 .lastName(student.getLastName())
                 .email(student.getEmail())

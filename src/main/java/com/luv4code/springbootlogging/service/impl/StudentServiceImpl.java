@@ -42,7 +42,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<StudentResponseDTO> getAll() {
-        final String METHOD = "getStudentById";
+        final String METHOD = "getAll";
         log.info("{}.{} - START", CLASS_NAME, METHOD);
         try {
             List<Student> students = studentRepository.findAll();
